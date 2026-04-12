@@ -1,6 +1,6 @@
 # Plexus — Ingest. Observe. Control.
 
-Open-source HardwareOps platform for IoT observability, real-time telemetry, and fleet management — from ESP32 to production.
+HardwareOps platform guide for using Plexus.
 
 ---
 
