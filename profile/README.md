@@ -44,4 +44,4 @@ npx plexusui add line-chart
 
 ---
 
-[plexus.company](https://plexus.company) · [Documentation](https://docs.plexus.company) · [Discord](https://discord.gg/plexus)
+[plexus.company](https://plexus.company)
