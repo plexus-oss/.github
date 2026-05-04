@@ -21,7 +21,7 @@ pip install plexus-agent
 
 ---
 
-### [plexus-c-sdk](https://github.com/plexus-oss/c-sdk) — Embedded C Library
+### [plexus-c](https://github.com/plexus-oss/plexus-c) — Embedded C Library
 
 Send telemetry from ESP32, STM32, and Arduino in ~1.5 KB RAM. Zero dependencies.
 
