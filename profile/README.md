@@ -4,7 +4,7 @@ HardwareOps platform guide for using Plexus.
 
 ---
 
-### [plexus-agent](https://github.com/plexus-oss/agent) — Python SDK
+### [plexus-python](https://github.com/plexus-oss/plexus-python) — Python SDK
 
 Stream sensor data, CAN bus, MAVLink, cameras, and MQTT from any device.
 
