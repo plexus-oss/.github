@@ -1,12 +1,33 @@
-# Plexus — Ingest. Observe. Control.
+# Plexus
 
-HardwareOps platform guide for using Plexus.
+Operations frontend for hardware fleets — connect any device or existing
+telemetry store, get dashboards, instruments, and alerts that engineers
+actually want to look at.
 
 ---
 
-### [plexus-python](https://github.com/plexus-oss/plexus-python) — Python SDK
+### [plexus](https://github.com/plexus-oss/plexus) — The platform
 
-Stream sensor data, CAN bus, MAVLink, cameras, and MQTT from any device.
+The whole thing: ingest gateway, ClickHouse storage, dashboards, alerts, read
+API. Source-available under the Elastic License 2.0 — every feature is in the
+repo; enterprise features unlock with an offline license key. Free for a
+single team with no caps and **no phone-home**.
+
+Self-host it in one command:
+
+```bash
+curl -fsSL https://plexus.company/install.sh | bash
+```
+
+---
+
+### [plexus-python](https://github.com/plexus-oss/plexus-python) — Python SDK · Apache-2.0
+
+Stream telemetry from any device — sensors, CAN bus, MAVLink, cameras, MQTT.
+
+```bash
+pip install plexus-python
+```
 
 ```python
 from plexus import Plexus
@@ -15,33 +36,24 @@ px = Plexus()
 px.send("engine.rpm", 3450, tags={"unit": "A"})
 ```
 
-```bash
-pip install plexus-agent
-```
-
 ---
 
-### [plexus-c](https://github.com/plexus-oss/plexus-c) — Embedded C Library
+### [plexus-typescript](https://github.com/plexus-oss/plexus-typescript) — TypeScript SDK · Apache-2.0
 
-Send telemetry from ESP32, STM32, and Arduino in ~1.5 KB RAM. Zero dependencies.
-
-```c
-plexus_client_t* px = plexus_init("plx_key", "esp32-001");
-plexus_send(px, "temperature", 72.5);
-plexus_flush(px);
-```
-
----
-
-### [plexus-ui](https://github.com/plexus-oss/ui) — GPU-Accelerated Charts
-
-WebGPU/WebGL2 React components — 100k+ data points at 60fps.
+Node, browser, and edge runtimes — plus a drop-in ingest proxy for Next.js,
+Remix, Hono, Bun, and Deno.
 
 ```bash
-npx plexusui init
-npx plexusui add line-chart
+npm install plexus-typescript
+```
+
+```ts
+import { Plexus } from "plexus-typescript";
+
+const px = new Plexus({ sourceId: "relay-7" });
+await px.send("engine_rpm", 3450, { tags: { unit: "A" } });
 ```
 
 ---
 
-[plexus.company](https://plexus.company)
+[plexus.company](https://plexus.company) · [docs.plexus.company](https://docs.plexus.company)
