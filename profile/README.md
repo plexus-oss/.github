@@ -1,29 +1,19 @@
 # Plexus
 
-Operations frontend for hardware fleets — connect any device or existing
-telemetry store, get dashboards, instruments, and alerts that engineers
-actually want to look at.
+Telemetry for hardware teams — sensor data in, one timeline, a UI you don't
+have to build. [plexus.company](https://plexus.company)
 
----
-
-### [plexus](https://github.com/plexus-oss/plexus) — The platform
-
-The whole thing: ingest gateway, ClickHouse storage, dashboards, alerts, read
-API. Source-available under the Elastic License 2.0 — every feature is in the
-repo; enterprise features unlock with an offline license key. Free for a
-single team with no caps and **no phone-home**.
-
-Self-host it in one command:
-
-```bash
-curl -fsSL https://plexus.company/install.sh | bash
-```
+This organization hosts the **open device-side code**: the pieces that run
+inside your hardware and your ground system. The Plexus platform itself is
+commercial and not distributed here.
 
 ---
 
 ### [plexus-python](https://github.com/plexus-oss/plexus-python) — Python SDK · Apache-2.0
 
-Stream telemetry from any device — sensors, CAN bus, MAVLink, cameras, MQTT.
+Stream telemetry from any device in one line. Store-and-forward SQLite buffer
+for intermittently connected hardware, WebSocket and HTTP transports, and
+examples for CAN bus, MAVLink, MQTT, I2C sensors, and thermal cameras.
 
 ```bash
 pip install plexus-python
@@ -32,28 +22,20 @@ pip install plexus-python
 ```python
 from plexus import Plexus
 
-px = Plexus()
-px.send("engine.rpm", 3450, tags={"unit": "A"})
+px = Plexus(api_key="YOUR_KEY", source_id="robot-01")
+px.send("battery.voltage", 12.4)
 ```
+
+### [openc3-cosmos-plexus](https://github.com/plexus-oss/openc3-cosmos-plexus) — COSMOS plugin · MIT
+
+Tails decommutated telemetry out of [OpenC3 COSMOS](https://openc3.com) into
+Plexus, and frames Plexus screens inside COSMOS. Installs into your existing
+ground system.
 
 ---
 
-### [plexus-typescript](https://github.com/plexus-oss/plexus-typescript) — TypeScript SDK · Apache-2.0
+Both are licensed so that code shipping inside your hardware carries no
+strings. Issues and pull requests welcome on either.
 
-Node, browser, and edge runtimes — plus a drop-in ingest proxy for Next.js,
-Remix, Hono, Bun, and Deno.
-
-```bash
-npm install plexus-typescript
-```
-
-```ts
-import { Plexus } from "plexus-typescript";
-
-const px = new Plexus({ sourceId: "relay-7" });
-await px.send("engine_rpm", 3450, { tags: { unit: "A" } });
-```
-
----
-
-[plexus.company](https://plexus.company) · [docs.plexus.company](https://docs.plexus.company)
+Commercial platform, pricing, and self-hosted deployments:
+[plexus.company](https://plexus.company) · info@plexus.company
