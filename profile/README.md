@@ -1,6 +1,6 @@
 # Plexus
 
-Telemetry for hardware teams — sensor data in, one timeline, a UI you don't
+Telemetry for hardware teams sensor data in, one timeline, a UI you don't
 have to build. [plexus.company](https://plexus.company)
 
 This organization hosts the **open device-side code**: the pieces that run
