@@ -1,8 +1,8 @@
 # Plexus
 
-Plexus is telemetry dashboards for hardware teams: stream data from drones,
-robots and IoT devices, or connect the database you already run, and get live
-dashboards and alerts. [plexus.company](https://plexus.company)
+Plexus is storage and dashboards for hardware teams: stream data from drones,
+robots and IoT devices into Plexus Time Series, or connect the database you
+already run, and get live dashboards and alerts. [plexus.company](https://plexus.company)
 
 This organization hosts the **open device-side code**: the pieces that run
 inside your hardware and your ground system. The Plexus platform itself is
