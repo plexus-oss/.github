@@ -1,7 +1,8 @@
 # Plexus
 
-Telemetry for hardware teams sensor data in, one timeline, a UI you don't
-have to build. [plexus.company](https://plexus.company)
+Plexus is telemetry dashboards for hardware teams: stream data from drones,
+robots and IoT devices, or connect the database you already run, and get live
+dashboards and alerts. [plexus.company](https://plexus.company)
 
 This organization hosts the **open device-side code**: the pieces that run
 inside your hardware and your ground system. The Plexus platform itself is
@@ -26,16 +27,10 @@ px = Plexus(api_key="YOUR_KEY", source_id="robot-01")
 px.send("battery.voltage", 12.4)
 ```
 
-### [openc3-cosmos-plexus](https://github.com/plexus-oss/openc3-cosmos-plexus) — COSMOS plugin · MIT
-
-Tails decommutated telemetry out of [OpenC3 COSMOS](https://openc3.com) into
-Plexus, and frames Plexus screens inside COSMOS. Installs into your existing
-ground system.
-
 ---
 
-Both are licensed so that code shipping inside your hardware carries no
-strings. Issues and pull requests welcome on either.
+It is licensed so that code shipping inside your hardware carries no
+strings. Issues and pull requests welcome.
 
 Commercial platform, pricing, and self-hosted deployments:
 [plexus.company](https://plexus.company) · info@plexus.company
